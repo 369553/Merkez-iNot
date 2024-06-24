@@ -1,0 +1,75 @@
+/*
+Görsel düzen modları:
+1- Tam özellik tayini modu:
+2- Yarı özellik tayini modu
+3- Basit mod
+
+Değiştirilmesi gerekenler:
+1. Ağırlıklara göre doldurulurken görsel öğeler çok büyümesin; orantılı olsun; ekranda kocaman durmasın:
+Bunun için;
+    1. Orantılı büyüme: Atfedilen ağırlıkların belli bir oranını al
+    ?2. Üst sınır: Bir görsel öğenin alabileceği en büyük boyut
+    3. Orantılı büyümedeki katsayıya başka şeyler ekle:
+        3.1 Atfedilen ağırlığın bir kısmını al, bunu 'ağırlık katsayısı' olarak isimlendir
+        3.2 Alan büyüklüğü ve görsel öğenin büyüklüğünü dikkate alarak bir 'genel katsayısı' üret
+        3.3 Genel katsayı ve ağırlık katsayısının belli oranda kombinasyonunu alarak 'büyüme katsayısı' üret.
+    Büyüme katsayısına göre büyütülen görsel öğenin büyüklüğü azamî büyüklüğünden büyükse katsayı düşürme fonksiyonuna gönder
+
+*/
+
+YENİ ÖZELLİKLER:
+maxViewSize : Bir öğenin alabileceği en büyük boyut:
+    . Bu özellik ihtiyarîdir
+    . Bu özellik atanırsa her görsel bileşenin maxSize()'ı bu değere eşitlenir.
+
+MODE : Görsel düzenin modu:
+    . Varsayılan : 2
+
+axisLock : Görsel bileşenler tek eksende olsun (true için)
+    . Görsel bileşenlerinin tek eksende olması isteniyorsa eksen kilidi açık olmalıdır;
+    . eksen kilidi açıksa görsel bileşenler sadece tek eksen boyunca dizilirler; eksen belirtilmezse yerleşim yerinin ve görsel
+    elemanlarının boyutuna göre seçilir.
+
+axisOrientation : Görsel bileşenlerin tek eleman yerleşebileceği eksen(ler):
+    . 0 = X ekseni
+    . 1 = Y ekseni
+    . 2 = X ve Y ekseni
+
+distInAxis : Eksen içindeki görsel bileşenler arasındaki mesafe
+
+distAxises : Eksenler arasındaki mesafe:
+    . Eğer eksen x ekseni ise satırlar arası mesafe
+    . Eğer eksen y ekseni ise sütunlar arası mesafe
+    . Eğer eksen x ve y ekseni ise bu değer dikkate alınmaz.
+
+#]TAM ÖZELLİK TAYİNİ MODE#[
+{
+    ŞU ŞEKİLDE OLACAK bi iznillâh:
+    Kullanıcıdan al:
+    GİRİŞ - 1:
+    Hücre sırası (dikey) : 
+    Hücre sırası (yatay) : 
+
+    Kaplanan Hücre sayısı (dikey) : 
+    Kaplanan Hücre sayısı (yatay) : 
+
+    Hücre ağırlığı (dikey) : 
+    Hücre ağırlığı (yatay) : 
+
+    Uzaklık (px cinsinden) (üst) : 
+    Uzaklık (px cinsinden) (sol) : 
+    Uzaklık (px cinsinden) (alt) : 
+    Uzaklık (px cinsinden) (sağ) : 
+
+    Doldurma biçimi : 
+
+}
+
+ConVal.fill = fill ;
+        ConVal.gridwidth = gridwidth ;
+        ConVal.gridheight = gridheight ;
+        ConVal.weightx = weightx;
+        ConVal.weighty = weighty;
+        ConVal.insets = insets ;
+        ConVal.gridx = gridx ;
+        ConVal.gridy = gridy ;
